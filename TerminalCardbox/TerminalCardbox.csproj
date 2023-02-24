@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C622EB9F-27B3-460B-9F18-ACB3A8113667}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SHBSS</RootNamespace>
+    <AssemblyName>TerminalCardbox</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>xinda.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="CommenLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CommenLib.dll</HintPath>
+    </Reference>
+    <Reference Include="FSJF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\FSJF.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="14FrmPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="14FrmPay.Designer.cs">
+      <DependentUpon>14FrmPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="12FrmCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="12FrmCheck.Designer.cs">
+      <DependentUpon>12FrmCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="32FrmCompQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="32FrmCompQuery.Designer.cs">
+      <DependentUpon>32FrmCompQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="21FrmApplyLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="21FrmApplyLogin.Designer.cs">
+      <DependentUpon>21FrmApplyLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="41FrmPINLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="41FrmPINLogin.Designer.cs">
+      <DependentUpon>41FrmPINLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="42FrmPINChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="42FrmPINChange.Designer.cs">
+      <DependentUpon>42FrmPINChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="22FrmApplyCheck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="22FrmApplyCheck.Designer.cs">
+      <DependentUpon>22FrmApplyCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCardboxTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCardboxTest.Designer.cs">
+      <DependentUpon>FrmCardboxTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfig.Designer.cs">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="22FrmCSQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="22FrmCSQ.Designer.cs">
+      <DependentUpon>22FrmCSQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="15FrmDlgPIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="15FrmDlgPIN.Designer.cs">
+      <DependentUpon>15FrmDlgPIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="51FrmGetCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="51FrmGetCard.Designer.cs">
+      <DependentUpon>51FrmGetCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPswd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPswd.Designer.cs">
+      <DependentUpon>FrmPswd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoClass\Global.cs" />
+    <Compile Include="InfoClass\PrintParameter.cs" />
+    <Compile Include="InfoClass\SSCTable.cs" />
+    <Compile Include="InfoClass\TerminalInfo.cs" />
+    <Compile Include="InterfaceClass\INI.cs" />
+    <Compile Include="InterfaceClass\MDATASQL.cs" />
+    <Compile Include="InterfaceClass\SSCSQL.cs" />
+    <Compile Include="InterfaceClass\KaGuan.cs" />
+    <Compile Include="InterfaceClass\DevMng.cs" />
+    <Compile Include="13FrmPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="13FrmPhone.Designer.cs">
+      <DependentUpon>13FrmPhone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="15FrmService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="15FrmService.Designer.cs">
+      <DependentUpon>15FrmService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="00FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="00FrmMain.Designer.cs">
+      <DependentUpon>00FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSetting.Designer.cs">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="11FrmSupplyLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="11FrmSupplyLogin.Designer.cs">
+      <DependentUpon>11FrmSupplyLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceClass\WxPicture.cs" />
+    <Compile Include="InterfaceClass\XindaTechApi.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SSIQuery\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="InfoClass\SocialSecurityInfo.cs" />
+    <Compile Include="InterfaceClass\Utility.cs" />
+    <Compile Include="Web References\ScrzService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="12FrmCheck.resx">
+      <DependentUpon>12FrmCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="14FrmPay.resx">
+      <DependentUpon>14FrmPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="13FrmPhone.resx">
+      <DependentUpon>13FrmPhone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="15FrmService.resx">
+      <DependentUpon>15FrmService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="00FrmMain.resx">
+      <DependentUpon>00FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="21FrmApplyLogin.resx">
+      <DependentUpon>21FrmApplyLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="32FrmCompQuery.resx">
+      <DependentUpon>32FrmCompQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="41FrmPINLogin.resx">
+      <DependentUpon>41FrmPINLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="42FrmPINChange.resx">
+      <DependentUpon>42FrmPINChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="22FrmApplyCheck.resx">
+      <DependentUpon>22FrmApplyCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCardboxTest.resx">
+      <DependentUpon>FrmCardboxTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfig.resx">
+      <DependentUpon>FrmConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="22FrmCSQ.resx">
+      <DependentUpon>22FrmCSQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="15FrmDlgPIN.resx">
+      <DependentUpon>15FrmDlgPIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="51FrmGetCard.resx">
+      <DependentUpon>51FrmGetCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPswd.resx">
+      <DependentUpon>FrmPswd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSetting.resx">
+      <DependentUpon>FrmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="11FrmSupplyLogin.resx">
+      <DependentUpon>11FrmSupplyLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\SIService\CardService1.wsdl" />
+    <None Include="Service References\SIService\SHBSS.SIService.allDsjkResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.checkAAC002Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.checkTAC1Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.checkTACResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.countCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getAC01Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getAZ03Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getBank01Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getBankResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getCard01Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getCardDataYZKResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getCardInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getFingerResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getMakeCardDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getPhotoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getReceiveAddressResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getReceiveCardDataResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getReceiveStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getRyjcxxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getRysjResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getSockInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getZkjdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.getZZCardNoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.onSendMessageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.readCardResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SIService\SHBSS.SIService.updateAAE008Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SSIQuery\CommonInterfaceService1.wsdl" />
+    <None Include="Service References\SSIQuery\SHBSS.SSIQuery.funcInterfaceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Web References\ScrzService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\ScrzService\ScrzService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SIService\" />
+    <WCFMetadataStorage Include="Service References\SSIQuery\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SIService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SSIQuery\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SSIQuery\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SSIQuery\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\ZKZ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\shenfen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\QryBG3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\XXQRBJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\phoneBK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\SFZYZBJ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://10.120.81.22:8080/webservice/ScrzService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ScrzService\</RelPath>
+      <UpdateFromURL>http://10.120.81.22:8080/webservice/ScrzService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>testSHB_ScrzService_ScrzServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\0MainFrame.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\1IDCard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\3PhoneNum.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\4LossAndPay.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\5MadeCard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\QrySelect21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\QryResult22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\x86\Debug\pic\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\甜心06_0001_组-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\甜心06_0000_下一步,登录_jurassic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\甜心06_0002_返回.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\022.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\甜心06_0000_组-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\systemblue.png" />
+    <None Include="Resources\申请社保卡.png" />
+    <None Include="Resources\修改密码.png" />
+    <None Include="Resources\综合查询.png" />
+    <None Include="Resources\插入社保卡.png" />
+    <None Include="Resources\读取身份证 .png" />
+    <None Include="Resources\确认修改按钮.png" />
+    <None Include="Resources\扫码.png" />
+    <None Include="Resources\扫描二维码.png" />
+    <None Include="Resources\01.jpg" />
+    <None Include="Resources\ok.png" />
+    <None Include="Resources\03.jpg" />
+    <None Include="Resources\06.jpg" />
+    <None Include="Resources\lingka.jpg" />
+    <None Include="Resources\04.jpg" />
+    <None Include="Resources\01wx.jpg" />
+    <None Include="Resources\00.jpg" />
+    <None Include="Resources\background.png" />
+    <None Include="Resources\btnreloadpin.png" />
+    <None Include="Resources\btnreplacecard.png" />
+    <None Include="Resources\pinbg.jpg" />
+    <None Include="Resources\蓝色主背景4.jpg" />
+    <None Include="Resources\刷身份证.jpg" />
+    <None Include="Resources\2刷身份证.jpg" />
+    <None Include="Resources\空白.jpg" />
+    <None Include="Resources\制卡.jpg" />
+    <None Include="Resources\蓝色背景 - 侧栏页.png" />
+    <None Include="Resources\8修改密码.png" />
+    <None Include="Resources\9重置密码.png" />
+    <None Include="Resources\侧栏页.jpg" />
+    <None Include="Resources\侧栏页调试.jpg" />
+    <None Include="Resources\缺字按钮.png" />
+    <Content Include="xinda.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

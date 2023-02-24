@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:intf="http://server.wei.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:impl="http://server.wei.com" targetNamespace="http://server.wei.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:intf="http://server.wei.com" xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://server.wei.com">
+      <xsd:element name="allJK">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="xml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="allJKResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="allJKReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getInfo">
+        <xsd:complexType />
+      </xsd:element>
+      <xsd:element name="getInfoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getInfoReturn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getInfoRequest">
+    <wsdl:part name="parameters" element="impl:getInfo" />
+  </wsdl:message>
+  <wsdl:message name="allJKResponse">
+    <wsdl:part name="parameters" element="impl:allJKResponse" />
+  </wsdl:message>
+  <wsdl:message name="allJKRequest">
+    <wsdl:part name="parameters" element="impl:allJK" />
+  </wsdl:message>
+  <wsdl:message name="getInfoResponse">
+    <wsdl:part name="parameters" element="impl:getInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ScrzService">
+    <wsdl:operation name="allJK">
+      <wsdl:input name="allJKRequest" message="impl:allJKRequest" />
+      <wsdl:output name="allJKResponse" message="impl:allJKResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getInfo">
+      <wsdl:input name="getInfoRequest" message="impl:getInfoRequest" />
+      <wsdl:output name="getInfoResponse" message="impl:getInfoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ScrzServiceSoapBinding" type="impl:ScrzService">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="allJK">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="allJKRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="allJKResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInfo">
+      <wsdlsoap:operation soapAction="" />
+      <wsdl:input name="getInfoRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getInfoResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ScrzServiceService">
+    <wsdl:port name="ScrzService" binding="impl:ScrzServiceSoapBinding">
+      <wsdlsoap:address location="http://10.120.81.25:8989/ScrzService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

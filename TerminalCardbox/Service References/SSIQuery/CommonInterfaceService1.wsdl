@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://entrance.platform.gov.cn/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="CommonInterfaceService" targetNamespace="http://entrance.platform.gov.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://entrance.platform.gov.cn/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="funcInterface" type="tns:funcInterface" />
+      <xs:element name="funcInterfaceResponse" type="tns:funcInterfaceResponse" />
+      <xs:complexType name="funcInterface">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="funcInterfaceResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Exception" type="tns:Exception" />
+      <xs:complexType name="Exception">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="message" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="Exception">
+    <wsdl:part name="Exception" element="tns:Exception" />
+  </wsdl:message>
+  <wsdl:message name="funcInterfaceResponse">
+    <wsdl:part name="parameters" element="tns:funcInterfaceResponse" />
+  </wsdl:message>
+  <wsdl:message name="funcInterface">
+    <wsdl:part name="parameters" element="tns:funcInterface" />
+  </wsdl:message>
+  <wsdl:portType name="CommonInterface">
+    <wsdl:operation name="funcInterface">
+      <wsdl:input name="funcInterface" message="tns:funcInterface" />
+      <wsdl:output name="funcInterfaceResponse" message="tns:funcInterfaceResponse" />
+      <wsdl:fault name="Exception" message="tns:Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CommonInterfaceServiceSoapBinding" type="tns:CommonInterface">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="funcInterface">
+      <soap:operation soapAction="urn:FuncInterface" style="document" />
+      <wsdl:input name="funcInterface">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="funcInterfaceResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CommonInterfaceService">
+    <wsdl:port name="CommonInterfacePort" binding="tns:CommonInterfaceServiceSoapBinding">
+      <soap:address location="http://10.120.6.93:8081/services/commonInterface" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
