@@ -52,7 +52,7 @@ namespace SHBSS
         private void btn_open_close_Click(object sender, EventArgs e)
         {
             if (btn_open_close.Text == "建立连接") {
-                // 建立连接
+                // 建立连接  --测试
                 if (f5san.F5Connect() != 0) { lbl_f5san_context.Text = f5san.strError; return; }
 
                 ShowRemain();
